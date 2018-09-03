@@ -37,9 +37,20 @@ componentDidMount(){
           data={this.state.data}
           keyExtractor={key => key}
           renderItem={({item}) =>(
-            <Image source={{uri:item}}
-            style={{width:"100%", height:200}}/>
+            <View>
+                  <View style={{flex:1,flexDirection:'row',margin:10,padding:20,borderBottomColor:'#00bfff',borderBottomWidth:1}}>
+                      <View style={{width:100,height:100}}>
+                      <Image source={{uri:item}}
+                      style={{width:"100%", height:100}}/>
+                      </View>
+                      <View style={{width:250,padding:10,position:'relative'}}>
+                      <Text style={{fontSize:30,fontWeght:100,position:'absolute',top:0,left:10}}>Medicine A</Text>
+                      <Text style={{fontSize:20,fontWeght:25,position:'absolute',top:40,left:10}}>Category</Text>
 
+                      <Text style={{fontSize:15,fontWeght:25,position:'absolute',bottom:0,left:10}} >about 1 week ago</Text>
+                      </View>
+                  </View>
+             </View>
             )
           
           }
@@ -55,6 +66,7 @@ componentDidMount(){
 const styles = StyleSheet.create({
   container: {
    flex: 1,
+   backgroundColor:'white'
    
   },
 });
