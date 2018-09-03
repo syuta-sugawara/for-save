@@ -1,4 +1,7 @@
 {
   "name": "Mediplus",
-  "displayName": "Mediplus"
+  "displayName": "Mediplus",
+  "expo": { 
+"sdkVersion": "29.0.0" 
+} 
 }

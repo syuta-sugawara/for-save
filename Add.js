@@ -25,13 +25,31 @@ RNImagePicker.showImagePicker({},res => {
   });
 };
 
+takeImage = () => {
+
+RNImagePicker.launchCamera({}, res => {
+  if (res.didCancel) {
+    console.log('User cancelled take picture');
+  }
+  else if (res.error) {
+    console.log('take picture Error: ', res.error);
+  }
+  else {
+    let source = { uri: res.uri };
+    this.setState(source);
+}
+  });
+
+};
+
   upload = () => {
     Firebase.storage().ref("images/"+ new Date().getTime()).putFile(this.state.uri,{ contentType: "image/jpeg" })
     .then(({downloadURL})=>Firebase.database().ref('images/'+new Date().getTime()).set({downloadURL}))
     .then(e=> {
       alert('Uploaded');
     }
-      ).catch( e => {
+      )
+    .catch( e => {
       alert('Error');
     });
 
@@ -42,6 +60,11 @@ RNImagePicker.showImagePicker({},res => {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Image source={{uri:this.state.uri}} style={styles.image} />
+
+        <TouchableOpacity style={styles.button} onPress={()=>this.takeImage()}>
+          <Text>Take pictutre</Text>
+        </TouchableOpacity>
+
         <TouchableOpacity style={styles.button} onPress={()=>this.openPicker()}>
           <Text>CameraRoll</Text>
         </TouchableOpacity>
