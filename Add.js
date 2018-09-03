@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import {View, Text, Button,TouchableOpacity, Image , StyleSheet} from 'react-native';
+import {View,TouchableOpacity, Image , StyleSheet} from 'react-native';
+import { Button,Text} from 'native-base';
 import RNImagePicker from 'react-native-image-picker';
 import Firebase from 'react-native-firebase';
-
+import Header from './Header';
 
 export default class Add extends React.Component {
   state={
@@ -58,20 +59,47 @@ RNImagePicker.launchCamera({}, res => {
   render() {
     
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Image source={{uri:this.state.uri}} style={styles.image} />
+      <View style={{ flex: 1 }}>
+            <View style={{alignItems: 'center', justifyContent: 'center' }}>
+                <Header />
+            </View>
+            <View style={{flex:1}}>
+                    
+                    <View>
+                        <Image source={{uri:this.state.uri}} style={styles.image} />
+                    </View>
+                    
+                    <View style={{flex:1,position:'relative',alignItems: 'center', justifyContent: 'center' }}>
 
-        <TouchableOpacity style={styles.button} onPress={()=>this.takeImage()}>
-          <Text>Take pictutre</Text>
-        </TouchableOpacity>
+                          <View style={{flex:4}}>
+                                
+                                <TouchableOpacity style={styles.button} onPress={()=>this.takeImage()}>
+                                 
+                                  <Text style={styles.textStyle}>Take pictutre</Text>
+                                
+                                </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button} onPress={()=>this.openPicker()}>
-          <Text>CameraRoll</Text>
-        </TouchableOpacity>
 
-        <TouchableOpacity  style={styles.button} onPress={() => this.upload()}>
-          <Text>Send</Text>
-        </TouchableOpacity>
+                                <TouchableOpacity style={styles.button} onPress={()=>this.openPicker()}>
+                        
+                                   <Text style={styles.textStyle}>CameraRoll</Text>
+                              
+                                </TouchableOpacity>
+
+                                <TouchableOpacity style={styles.button}>
+                        
+                                    <Text style={styles.textStyle}>Recognition</Text>
+                            
+                                </TouchableOpacity>
+                          </View>
+                        
+                          <View style={{flex:1,position:'absolute',bottom:0,width:'100%'}}>
+                          <Button full info onPress={() => this.upload()} >
+                              <Text>Add</Text>
+                          </Button>
+                          </View>
+                    </View>
+            </View>
       </View>
     );
   }
@@ -80,12 +108,23 @@ RNImagePicker.launchCamera({}, res => {
 
 const styles= StyleSheet.create({
 image:{
+margin:10,
 width:'100%',
 height:200,
 backgroundColor:'#EEE',
 },
-button:{
-padding:20,
-},
 
+button:{
+    backgroundColor:'#00bfff',
+    alignItems: 'center',
+    justifyContent:'center',
+    height:60,
+    width:300,
+    borderRadius: 10,
+    margin:10
+
+  },
+  textStyle:{
+    color:'white',
+  }
   });

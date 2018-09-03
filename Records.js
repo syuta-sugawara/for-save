@@ -3,6 +3,7 @@ import {View,FlatList,TouchableHighlight, StyleSheet,Image} from 'react-native';
 import {  Button, Text } from 'native-base';
 import Add from './Add';
 import Firebase from 'react-native-firebase';
+import Header from './Header';
 
 
 export default class Records extends React.Component {
@@ -30,6 +31,7 @@ componentDidMount(){
     console.log(this.state);
     return (
       <View style={styles.container}>
+      <Header />
         <FlatList
           style={{flex:1}}
           data={this.state.data}
@@ -53,7 +55,6 @@ componentDidMount(){
 const styles = StyleSheet.create({
   container: {
    flex: 1,
-   paddingTop: 22,
    
   },
 });
