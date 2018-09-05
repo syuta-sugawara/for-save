@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {View,TouchableOpacity, Image , StyleSheet} from 'react-native';
 import { Button,Text} from 'native-base';
 import RNImagePicker from 'react-native-image-picker';
+
 import Firebase from 'react-native-firebase';
 import Header from './Header';
 
@@ -26,22 +27,7 @@ RNImagePicker.showImagePicker({},res => {
   });
 };
 
-takeImage = () => {
 
-RNImagePicker.launchCamera({}, res => {
-  if (res.didCancel) {
-    console.log('User cancelled take picture');
-  }
-  else if (res.error) {
-    console.log('take picture Error: ', res.error);
-  }
-  else {
-    let source = { uri: res.uri };
-    this.setState(source);
-}
-  });
-
-};
 
   upload = () => {
     Firebase.storage().ref("images/"+ new Date().getTime()).putFile(this.state.uri,{ contentType: "image/jpeg" })
