@@ -35,12 +35,22 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - React (0.56.0):
+    - React/Core (= 0.56.0)
+  - react-native-image-picker (0.14.3):
+    - React
+  - React/Core (0.56.0):
+    - yoga (= 0.56.0.React)
+  - yoga (0.56.0.React)
 
 DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database (~> 5.3.0)
   - Firebase/Storage (~> 5.3.0)
   - FirebaseCore
+  - React (from `../node_modules/react-native`)
+  - react-native-image-picker (from `../node_modules/react-native-image-picker`)
+  - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -55,6 +65,14 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
 
+EXTERNAL SOURCES:
+  React:
+    :path: "../node_modules/react-native"
+  react-native-image-picker:
+    :path: "../node_modules/react-native-image-picker"
+  yoga:
+    :path: "../node_modules/react-native/ReactCommon/yoga"
+
 SPEC CHECKSUMS:
   Firebase: 68afeeb05461db02d7c9e3215cda28068670f4aa
   FirebaseAnalytics: b3628aea54c50464c32c393fb2ea032566e7ecc2
@@ -66,7 +84,10 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  React: 1fe0eb13d90b625d94c3b117c274dcfd2e760e11
+  react-native-image-picker: b303e31c3c4ada1d7cb1342423d328d2efb07fb3
+  yoga: b1ce48b6cf950b98deae82838f5173ea7cf89e85
 
-PODFILE CHECKSUM: 24b008c19f015de63b028f0c7cdc1841f96423dc
+PODFILE CHECKSUM: 46750ee8d30b5c4dfc5207cb67a9d88affbd07e1
 
 COCOAPODS: 1.5.3
