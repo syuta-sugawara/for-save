@@ -7,6 +7,7 @@ import Firebase from 'react-native-firebase';
 import Header from './Header';
 
 export default class Add extends React.Component {
+
   state={
     uri:''
   };
@@ -51,24 +52,18 @@ RNImagePicker.showImagePicker({},res => {
             </View>
             <View style={{flex:1}}>
                     
-                    <View>
+                    <View style={styles.image}>
                         <Image source={{uri:this.state.uri}} style={styles.image} />
                     </View>
                     
                     <View style={{flex:1,position:'relative',alignItems: 'center', justifyContent: 'center' }}>
 
-                          <View style={{flex:4}}>
-                                
-                                <TouchableOpacity style={styles.button} onPress={()=>this.takeImage()}>
-                                 
-                                  <Text style={styles.textStyle}>Take pictutre</Text>
-                                
-                                </TouchableOpacity>
-
+                          <View style={{flex:4,}}>
+                        
 
                                 <TouchableOpacity style={styles.button} onPress={()=>this.openPicker()}>
                         
-                                   <Text style={styles.textStyle}>CameraRoll</Text>
+                                   <Text style={styles.textStyle}>take image</Text>
                               
                                 </TouchableOpacity>
 
@@ -107,7 +102,7 @@ button:{
     height:60,
     width:300,
     borderRadius: 10,
-    margin:10
+    margin:30
 
   },
   textStyle:{
