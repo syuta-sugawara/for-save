@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -48,6 +49,7 @@
 		620C77A09B5C4A2CA62E5B76 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5C23568BDC61479F89582D8A /* MaterialIcons.ttf */; };
 		6580B137213FB3270078E4F8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6580B10F213FB3270078E4F8 /* GoogleService-Info.plist */; };
 		6580B1A9213FC66D0078E4F8 /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6580B18D213FC4AF0078E4F8 /* libRNImagePicker.a */; };
+		65B8B1F42140CA140020A7A1 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 008F07F21AC5B25A0029DE68 /* main.jsbundle */; };
 		6DC2A467AF154B258D7F6D0B /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58CBC9FCC5B24F4F8ACCCF0E /* libRNVectorIcons.a */; };
 		8138F99459014FF592928CBF /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1F5AD8255084DA6B9DC43E5 /* Entypo.ttf */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
@@ -1227,6 +1229,7 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				8138F99459014FF592928CBF /* Entypo.ttf in Resources */,
+				65B8B1F42140CA140020A7A1 /* main.jsbundle in Resources */,
 				132B5F07217840DAB0F95BCE /* EvilIcons.ttf in Resources */,
 				4E3806FA975F431694F62454 /* Feather.ttf in Resources */,
 				462F7321431C4A53B7D50264 /* FontAwesome.ttf in Resources */,
@@ -1274,7 +1277,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh ./src/index.ios.js";
 		};
 		20099983B8B96C0721537CA4 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
