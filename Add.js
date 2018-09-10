@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {View,TouchableOpacity, Image , StyleSheet} from 'react-native';
 import { Button,Text} from 'native-base';
 import RNImagePicker from 'react-native-image-picker';
+import { ImageManipulator } from 'expo';
 
 import Firebase from 'react-native-firebase';
 import Header from './Header';
@@ -24,6 +25,13 @@ RNImagePicker.showImagePicker({},res => {
   else {
     let source = { uri: res.uri };
     this.setState(source);
+
+ const manipResult = await ImageManipulator.manipulate(
+      this.state.uri,,
+      { base64: 'true' }
+    );
+ console.log(this.state.uri);
+
 }
   });
 };
